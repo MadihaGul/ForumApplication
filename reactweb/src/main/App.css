@@ -1,0 +1,62 @@
+.logo {
+  height: 100px;
+  cursor: pointer;
+  }
+  
+  .subtitle {
+    font-size: x-large;
+    font-style: italic;
+    color: coral;
+  }
+  
+  .themeFontColor {
+    color: coral;
+  }
+  
+  .tr {
+     cursor: pointer;
+  }
+
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead th {
+    text-align: left;
+    border-bottom: 2px solid black;
+  }
+  
+  thead button {
+    border: 0;
+    border-radius: none;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: inherit;
+    padding: 0.5em;
+    margin-bottom: 1px;
+  }
+  
+  thead button.ascending::after {
+    content: '👇';
+    display: inline-block;
+    margin-left: 1em;
+  }
+  
+  thead button.descending::after {
+    content: '☝️';
+    display: inline-block;
+    margin-left: 1em;
+  }
+  
+  tbody td {
+    padding: 0.5em;
+  
+  }
+  
+  tbody tr:hover {
+    background-color: #eee;
+  }
+ 
+  
