@@ -2,6 +2,7 @@
 
 namespace ForumApplication.API.Profiles
 {
+    // For mapper
     public class PostProfile : Profile
     {
         public PostProfile() { 

@@ -2,6 +2,7 @@
 
 namespace ForumApplication.API.Services
 {
+    // Contract for repository
     public interface IForumApplicationRepository
     {
         Task<IEnumerable<Post>> GetPostsAsync();

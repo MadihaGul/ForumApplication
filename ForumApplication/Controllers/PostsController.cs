@@ -17,7 +17,7 @@ namespace ForumApplication.Controllers
     {
         private readonly IForumApplicationRepository _forumApplicationRepository;
         private readonly IMapper _mapper;
-
+        // DI 
         public PostsController(IForumApplicationRepository forumApplicationRepository, IMapper mapper)
         {
            _forumApplicationRepository = forumApplicationRepository ??
@@ -25,7 +25,7 @@ namespace ForumApplication.Controllers
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             ;
         }
-        // GET: api/<PostsController>
+        // GET: api/<PostsController> to get all posts
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PostWithoutCommentsDto>>> Get()
         {
@@ -34,7 +34,7 @@ namespace ForumApplication.Controllers
             return Ok(_mapper.Map<IEnumerable<PostWithoutCommentsDto>>(postEntities));
         }
 
-        // GET api/<PostsController>/5
+        // GET api/<PostsController>/5 to get a single post including comments
         [HttpGet("{id}", Name = "GetPost")]        
         public async Task<ActionResult<PostDto>> Get(int id)
         {
@@ -43,7 +43,7 @@ namespace ForumApplication.Controllers
             return Ok(_mapper.Map<PostDto>(post));
         }
 
-        // POST api/<PostsController>
+        // POST api/<PostsController> add a post
         [HttpPost]
         public async Task<ActionResult<PostDto>> Create( CreatePostDto post)
         {
@@ -58,7 +58,7 @@ namespace ForumApplication.Controllers
         }
 
 
-        //PUT api/<PostsController>/5
+        //PUT api/<PostsController>/5 edit a post
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, UpdatePostDto updatedPost)
         {
@@ -73,6 +73,8 @@ namespace ForumApplication.Controllers
             return NoContent();
 
         }
+
+        // future work edit a post partially
 
         //[HttpPatch("{id}")]
         //public async Task<ActionResult> PartiallyUpdatePointOfInterest(
@@ -103,7 +105,7 @@ namespace ForumApplication.Controllers
 
 
 
-        // DELETE api/<PostsController>/5
+        // DELETE api/<PostsController>/5 delete a post
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
 

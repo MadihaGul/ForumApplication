@@ -15,7 +15,9 @@ namespace ForumApplication.API.Controllers
     public class CommentsController : ControllerBase
     {
         private readonly IForumApplicationRepository _forumApplicationRepository;
-        private readonly IMapper _mapper;
+        private readonly IMapper _mapper; 
+
+        // DI to use mapper and repository
         public CommentsController(IForumApplicationRepository forumApplicationRepository, IMapper mapper)
         {
             _forumApplicationRepository = forumApplicationRepository ??
@@ -24,7 +26,7 @@ namespace ForumApplication.API.Controllers
             ;
 
         }
-        //GET: api/<CommentsController>
+        //GET: api/<CommentsController> to get all comments on a post
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CommentDto>>> Get(int postId)
         {
@@ -38,7 +40,7 @@ namespace ForumApplication.API.Controllers
             return Ok(_mapper.Map<IEnumerable<CommentDto>>(commentOnPost));
         }
 
-        // GET api/<CommentsController>/5
+        // GET api/<CommentsController>/5 To get a specific comment 
         [HttpGet("{id}", Name = "GetComment")]
         public async Task<ActionResult<CommentDto>> Get(int postId, int commentId)
         {
@@ -53,7 +55,7 @@ namespace ForumApplication.API.Controllers
             return Ok(_mapper.Map<CommentDto>(commentOnPost));
         }
 
-        // POST api/<CommentsController>
+        // POST api/<CommentsController> to add a comment to a post
         [HttpPost]
         public async Task<ActionResult<CommentDto>> Create(int postId, CreateCommentDto comment)
         {
@@ -69,6 +71,7 @@ namespace ForumApplication.API.Controllers
             return Ok( createdCommentToReturn );
 
         }
+        // To edit a comment 
 
         //// PUT api/<CommentsController>/5
         //[HttpPut("{id}")]d
@@ -76,6 +79,7 @@ namespace ForumApplication.API.Controllers
         //{
         //}
 
+        // To delete a comment 
         //// DELETE api/<CommentsController>/5
         //[HttpDelete("{id}")]
         //public void Delete(int id)

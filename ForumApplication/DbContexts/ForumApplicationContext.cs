@@ -11,7 +11,7 @@ namespace ForumApplication.API.DbContexts
         public ForumApplicationContext(DbContextOptions<ForumApplicationContext> options) : base(options)
         {
         }
-
+        // Seed data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             _ = modelBuilder.Entity<Post>()

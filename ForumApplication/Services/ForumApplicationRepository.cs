@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ForumApplication.API.Services
 {
+    // Repository to work with EF
     public class ForumApplicationRepository : IForumApplicationRepository
     {
         private readonly ForumApplicationContext _context;
