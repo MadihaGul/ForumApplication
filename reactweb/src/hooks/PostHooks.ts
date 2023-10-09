@@ -6,6 +6,7 @@ import {PostDetail} from "../types/postdetail"
 import { useNavigate } from "react-router-dom"
 import Problem from "../types/problem"
 
+// To fetch a post
 const useFetchPost = (id: number) => {
 
     return useQuery<PostDetail, AxiosError>( ["Posts", id], () =>
@@ -14,6 +15,8 @@ const useFetchPost = (id: number) => {
 
     )
 }
+
+// To add a post
 const useAddPost = () => {
     const queryClient = useQueryClient();
     const nav = useNavigate();
@@ -30,7 +33,7 @@ const useAddPost = () => {
     );
   };
 
-
+// To edit a post
   const useUpdatePost = () => {
     const queryClient = useQueryClient();
     const nav = useNavigate();
@@ -46,6 +49,7 @@ const useAddPost = () => {
     );
   };
 
+  // To delete a post
   const useDeletePost = () => {
     const queryClient = useQueryClient();
     const nav = useNavigate();

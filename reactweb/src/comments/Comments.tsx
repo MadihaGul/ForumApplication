@@ -1,3 +1,4 @@
+// To display list/table of comments
 import { useState } from "react";
 
 import { useAddComment, useFetchComments } from "../hooks/CommentHooks";

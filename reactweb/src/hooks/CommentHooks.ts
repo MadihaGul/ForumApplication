@@ -5,7 +5,7 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 import Problem from "../types/problem";
 import { useNavigate } from "react-router-dom";
 
-
+// To fetch comments
 const useFetchComments = (postId: number) => {
   return useQuery<Comment[], AxiosError>(["comments", postId], () =>
     axios
@@ -14,6 +14,7 @@ const useFetchComments = (postId: number) => {
   );
 };
 
+// To add comments
 const useAddComment = () => {
     const queryClient = useQueryClient();
     const nav = useNavigate();

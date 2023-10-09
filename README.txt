@@ -25,3 +25,7 @@ Once the project is opened in VS Code, go to Terminal and choose New Terminal. T
 8.	Then write : npm install
 9.	Lastly type: npm start
 10.	Finally Application will open in a browser! Here you can view, add, edit, delete Posts and comment.
+
+What have I done shortly:
+
+Used C# Web API for the backend and React for frontend to consume API. I used SQlite for persistence. Some major part of my work are CRUD for Post as well as Read/Write Comments. Sorting post by clicking on the heading (e.g by date/Title etc click on date/Title heading). 
